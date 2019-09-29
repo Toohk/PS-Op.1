@@ -55,7 +55,13 @@ input[type="text"]
     font-size:20px;
     padding: 0px 0px 0px 20px;
 }
-
+.red{
+    color: red;
+}
+.end{
+    justify-content: flex-end;
+    width: 100%;
+}
 
 .block-search{
     
@@ -213,10 +219,6 @@ li{
 nav a{
     color: black;
 }
-nav a:hover{
-    color: black;
-    background-color: rgba(0, 0, 0, 0.054);
-}
 .top-footer{
     height: 140px;
     background-color: rgb(61, 61, 61);
@@ -227,6 +229,9 @@ nav a:hover{
 }
 .grey{
     color: rgb(158, 158, 158);
+}
+fieldset{
+    border: none;
 }
 
 

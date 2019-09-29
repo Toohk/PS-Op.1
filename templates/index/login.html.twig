@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+    
+
+
+{% block body %}
+
+<link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+        <section>
+
+           
+
+            <div class="card block-form-signup">
+                    <p class="title-form">Login</p>
+
+                    <hr>
+                <form action="" method="POST">
+                    <div class="content-form">
+                        <fieldset>
+                            <label for="email">Email</label> <br>
+                            <input class="input-form card" placeholder="Enter your email address" type="text" required name="email" id="email">   
+                        </fieldset>
+                        <fieldset>
+                            <label for="password">Password</label> <br>
+                            <input class="input-form card" placeholder="Enter your password" type="password" required name="password" id="password">
+                        </fieldset>
+                    </div>
+                    <div class="flex end">
+                            <button class="btn-signup" type="submit">Login !</button>
+                    </div>
+                    
+                </form>
+            </div>
+        
+        </section>
+    
+        
+
+{% endblock %}

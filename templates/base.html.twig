@@ -13,10 +13,71 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+            <div class="flex">
+                    <nav id="navBar">
+                        <span class="nav-content">
+                        
+                            <div class="nav-logo center"><a href="{{ path('index') }}"><img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt=""></a></div>
+                            
+                            <div class="center title-nav">P.S Op.1 </div>
+                
+                            <hr>
+                            
+                            <ul> 
+                                <li><a href=""><span class="mdi mdi-spin mdi-orbit icon-medium"> </span>Accueil</a></li>
+                                <li><a href=""><span class="mdi mdi-filter icon-medium"> </span>Thématiques</a></li>
+                                <li><a href=""><span class="mdi mdi-file-question icon-medium"> </span>Page aléatoire</a></li>
+                                <li><a href=""><span class="mdi mdi-clock-alert icon-medium"> </span>Articles récents</a></li>
+                                <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Contact</a></li>       
+                            </ul>
+                            
+                        </span>
+                
+                    </nav>
+                
+                    <main>
+                    
+                        <header>
+                                <span id="btn-menu" class="mdi mdi-menu icon-medium btn-menu"> </span>
+                                <div class="header-title ">
+                                    <a href="" class="flex">
+                                        <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="">
+                                        <p>P.S Op.1</p> 
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="{{ path('signup') }}"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
+                                    <a href="{{ path('login') }}"><span class="mdi mdi-account icon-medium"> </span>Login</a>
+                                </div>
+                        </header>
+
+                        <div id="background"></div>
+
+                        <div class="block-search">
+                            <input class="input-search" type="text" placeholder="Search . . .">
+                            <button class="card btn-search"><span class="mdi mdi-magnify icon-medium"> </span></button>
+                        </div>
+                    
+                        {% block body %}{% endblock %}
+                    
+                        <div id="modal-background"></div>
+                    
+                    </main>
+                </div>
+                
+                <footer>
+                   <div class="top-footer"></div>
+                   <div class="bottom-footer flex">
+                        <span class="center grey"> © 2019 Copyright:  
+                            <a  href="https://toohk.fr"> toohk.fr</a>
+                        </span> 
+                    </div>
+                </footer>
+        
         {% block javascripts %}
         <script src="{{ asset('js/nav-bar.js') }}"></script>
         <script src="{{ asset('js/daily-picture.js') }}"></script>
         {% endblock %}
     </body>
 </html>
+8
