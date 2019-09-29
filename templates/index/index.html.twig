@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="flex">
+<nav id="navBar">
+    <span class="nav-content">
+    
+        <div class="nav-logo center"><a href=""><img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt=""></a></div>
+        
+        <div class="center title-nav">P.S Op.1 </div>
+
+        <hr>
+        
+        <ul> 
+            <li><a href=""><span class="mdi mdi-spin mdi-orbit icon-medium"> </span>Accueil</a></li>
+            <li><a href=""><span class="mdi mdi-filter icon-medium"> </span>Thématiques</a></li>
+            <li><a href=""><span class="mdi mdi-file-question icon-medium"> </span>Page aléatoire</a></li>
+            <li><a href=""><span class="mdi mdi-clock-alert icon-medium"> </span>Articles récents</a></li>
+            <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Contact</a></li>       
+        </ul>
+        
+    </span>
+
+</nav>
+
+<main>
+
+  
+    
+    <header>
+            <span id="btn-menu" class="mdi mdi-menu icon-medium btn-menu"> </span>
+            <div class="header-title ">
+                <a href="" class="flex">
+                    <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="">
+                    <p>P.S Op.1</p> 
+                </a>
+            </div>
+            <div>
+                <a href="/"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
+                <a href="/"><span class="mdi mdi-account icon-medium"> </span>Login</a>
+            </div>
+        
+
+    </header>
+    <div id="background"></div>
+    <div class="block-search">
+        <input class="input-search" type="text" placeholder="Search . . .">
+        <button class="card btn-search"><span class="mdi mdi-magnify icon-medium"> </span></button>
+    </div>
+    <div class="block-slogan card">
+        <h1>Slogan du site</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga asperiores ducimus repellat optio odio culpa aliquid dolorum tempore quos. Ratione provident assumenda quaerat mollitia et accusamus minus obcaecati eos! Atque.</p>
+    </div>
+    
+    <section>
+
+        <div class="flex column fifty">
+
+            <article class="last-page card">
+                <div class="flex space-between"><p><span class="mdi mdi-clock-alert "> </span>Last publication</p> <a href="">voir la page</a></div>
+                <hr>
+                <h2>Titre de la page</h2>
+                <div class="flex block-paragraph-img">
+                    <p class="first-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore enim rerum omnis, officiis dolorem aperiam eum necessitatibus molestiae architecto illum doloremque placeat eos. Eius quos necessitatibus deserunt odit, est fugit eum debitis minima magnam vel dolores quod, eveniet a doloremque enim eligendi officiis nobis aut nesciunt omnis suscipit provident. Illo?</p>
+                    <div class="img-paragraph"><img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18284-1600x1200.jpg" alt=""></div>
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum pariatur iure nisi deleniti dolore. Cum, nam libero iusto saepe, praesentium porro optio eum impedit voluptatibus pariatur possimus dignissimos voluptatum magni, quia distinctio. Omnis labore quos sunt laudantium sed fugit placeat! Accusamus ipsum, velit fugit earum est illum rem laudantium eligendi nemo, nisi aperiam sapiente reiciendis nesciunt commodi at. Atque ut dolores quo! Necessitatibus minima iste fugit beatae illo fugiat soluta.</p>
+            </article>
+
+            <article class="last-page card">
+                    <div class="flex space-between"><p>Dernier article publié</p> <a href="">voir la page</a></div>
+                    <hr>
+                    <h2>Titre de la page</h2>
+                    <div class="flex">
+                        <p class="first-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore enim rerum omnis, officiis dolorem aperiam eum necessitatibus molestiae architecto illum doloremque placeat eos. Eius quos necessitatibus deserunt odit, est fugit eum debitis minima magnam vel dolores quod, eveniet a doloremque enim eligendi officiis nobis aut nesciunt omnis suscipit provident. Illo?</p>
+                        <div class="img-paragraph"><img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18284-1600x1200.jpg" alt=""></div>
+                    </div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum pariatur iure nisi deleniti dolore. Cum, nam libero iusto saepe, praesentium porro optio eum impedit voluptatibus pariatur possimus dignissimos voluptatum magni, quia distinctio. Omnis labore quos sunt laudantium sed fugit placeat! Accusamus ipsum, velit fugit earum est illum rem laudantium eligendi nemo, nisi aperiam sapiente reiciendis nesciunt commodi at. Atque ut dolores quo! Necessitatibus minima iste fugit beatae illo fugiat soluta.</p>
+                </article>
+
+            
+
+        </div>
+
+        <div class="flex column fifty">
+
+                <article class="daily-picture-block card">
+                        <h3 id="daily-picture-title" class="daily-picture-title">Nom de la photo</h3>
+                        
+                        <img id="daily-picture" class="daily-picture" src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/sts111-306-012_orig.jpg" alt="">
+                        <p id="daily-picture-description" class="daily-picture-description"></p>
+                    </article>
+
+                
+    
+                
+    
+            </div>
+       
+    </section>
+
+    
+
+
+    
+    <div id="modal-background"></div>
+    
+</main>
+</div>
+<footer>
+   <div class="top-footer">
+        
+
+   </div>
+   <div class="bottom-footer flex">
+     <span class="center grey"> © 2018 Copyright:  
+        <a  href="https://toohk.fr"> toohk.fr</a>
+    </span> 
+    </div>
+   
+
+</footer>
+
+{% endblock %}
