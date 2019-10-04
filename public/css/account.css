@@ -1,0 +1,41 @@
+#background{
+    height: 250px;
+}
+.block-btn-user-menu{
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start!important;
+    padding-top: 20px;
+}
+.btn-create{
+    border: solid 2px rgb(186, 199, 228);   
+    background-color: white;
+    padding: 10px;
+    font-size:16px;
+    margin-right: 10px;
+}
+.li-page{
+    display: flex;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 4px;
+    background-color: white;
+    height: 50px;
+    align-items: center;
+    margin: 0px 2px;
+    justify-content: space-between;
+}
+.li-title-page{
+    font-weight: bold;
+    margin-left: 10px;
+}
+.btn-list{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-right:10px;
+    
+}
+.orange{
+    color: orange;
+}

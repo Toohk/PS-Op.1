@@ -36,4 +36,34 @@ class IndexController extends AbstractController
             'controller_name' => 'IndexController',
         ]);
     }
+
+    /**
+     * @Route("/user", name="user")
+     */
+    public function user()
+    {
+        return $this->render('index/user.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
+    /**
+     * @Route("/create", name="create")
+     */
+    public function create()
+    {
+        return $this->render('index/create.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
+    /**
+     * @Route("/edit", name="edit")
+     */
+    public function edit()
+    {
+        return $this->render('index/edit.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
 }

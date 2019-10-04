@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link href="{{ asset('css/account.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+
+    <section>
+
+        <div class="block-btn-user-menu">
+            
+            <button class="btn-create"><span class="mdi mdi-eye icon-medium"> </span>Review pages</button>
+            <button class="btn-create"><span class="mdi mdi-folder-account icon-medium"> </span>My pages</button>
+            <button class="btn-create"><span class="mdi mdi-file icon-medium"> </span>Create new page</button>
+        </div>
+
+        <div class="block">
+            <p class="title-form">EDIT</p>
+            <hr>
+            <div class="flex end">
+                <button class="btn-signup" type="submit">Save</button>
+            </div>
+        </div>
+        
+    </section>
+    
+{% endblock %}

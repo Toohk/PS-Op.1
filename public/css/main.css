@@ -1,7 +1,7 @@
 body{
     min-height: 100vh;;
     margin: 0px;
-    
+    background-color: rgb(235, 235, 235);
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
 }
@@ -18,11 +18,12 @@ body{
     background-repeat: no-repeat;
     z-index: -1;
 }
+button { cursor: pointer; }
 nav{
     display: block;
     width: 280px;
     min-height: 100vh;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     box-shadow: 5px 0px 1px rgb(204, 206, 207);
 }
 .nav-content{
@@ -46,9 +47,8 @@ a{
     margin: 10px 10px;
     color: white;
     outline: none;
-  text-decoration: none;
+    text-decoration: none;
 }
-
 
 input[type="text"]
 {
@@ -71,13 +71,10 @@ input[type="text"]
 }
 .card{
     border-radius: 10px;
-    background-color: aliceblue;
-   
+    background-color: rgb(255, 255, 255);
     box-shadow: 5px 3px 1px rgb(113, 170, 224);
-    
 }
 .block-slogan{ 
-    
     padding: 5px 30px;
     color: white;
     margin:80px 80px;
@@ -230,8 +227,21 @@ nav a{
 .grey{
     color: rgb(158, 158, 158);
 }
+.blue{
+    color: rgb(99, 162, 233);
+}
 fieldset{
     border: none;
+}
+.block {
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px 20px;
+    padding: 10px;
+}
+.list-article{
+    
 }
 
 
