@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link href="{{ asset('css/account.css') }}" rel="stylesheet" />
+
+    <section>
+
+        <div class="block-btn-user-menu">
+            
+            <button class="btn-create"><span class="mdi mdi-eye icon-medium"> </span>Review pages</button>
+            <button class="btn-create"><span class="mdi mdi-folder-account icon-medium"> </span>My pages</button>
+            <button class="btn-create"><span class="mdi mdi-file icon-medium"> </span>Create new page</button>
+        </div>
+
+        <div class="block">
+            <p class="title-form"> <span class="mdi grey mdi-file-document-edit icon-medium"> </span>In progress</p>
+            <div class="list-article">
+                <div class="li-page"> 
+                    <div class="li-title-page">Title page</div>
+                    <div class="li-date-page">23/12/2019</div>
+                    <div>
+                        <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
+                        <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
+                    </div>
+                </div>
+                <div class="li-page"> 
+                        <div class="li-title-page">Title page 2</div>
+                        <div class="li-date-page">20/10/2019</div>
+                        <div>
+                            <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
+                            <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="block">
+            <p class="title-form"><span class="mdi orange mdi-file-document-box-search icon-medium"> </span>In review</p>
+            <div class="list-article"></div>
+        </div>
+        <div class="block">
+            <p class="title-form"><span class="mdi blue mdi-book-open-page-variant icon-medium"> </span>Pages</p>
+            <div class="list-article"></div>
+        </div>
+        
+    
+    </section>
+    
+{% endblock %}
