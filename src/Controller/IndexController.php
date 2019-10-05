@@ -28,7 +28,7 @@ class IndexController extends AbstractController
     }
 
     /**
-     * @Route("/login", name="login")
+     * @Route("/login9", name="login")
      */
     public function login()
     {

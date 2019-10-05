@@ -28,7 +28,13 @@
                                 <li><a href=""><span class="mdi mdi-filter icon-medium"> </span>Thématiques</a></li>
                                 <li><a href=""><span class="mdi mdi-file-question icon-medium"> </span>Page aléatoire</a></li>
                                 <li><a href=""><span class="mdi mdi-clock-alert icon-medium"> </span>Articles récents</a></li>
-                                <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Contact</a></li>       
+                                <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Contact</a></li>
+                                {% if app.user %}
+                                <hr>
+                                <li><a href="{{ path('user') }}"><span class="mdi mdi-file-question icon-medium"> </span>My pages</a></li>
+                                <li><a href=""><span class="mdi mdi-clock-alert icon-medium"> </span>Account</a></li>
+                                <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Review page</a></li>
+                                {% endif %}
                             </ul>
                             
                         </span>
@@ -45,10 +51,20 @@
                                         <p>P.S Op.1</p> 
                                     </a>
                                 </div>
-                                <div>
-                                    <a href="{{ path('signup') }}"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
-                                    <a href="{{ path('login') }}"><span class="mdi mdi-account icon-medium"> </span>Login</a>
-                                </div>
+
+                                {% if not app.user %}
+                                    <div>
+                                        <a href="{{ path('app_register') }}"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
+                                        <a href="{{ path('app_login') }}"><span class="mdi mdi-account icon-medium"> </span>Login</a>
+                                    </div>
+                                {% endif %}
+                                {% if app.user %}
+                                    <div>
+                                        
+                                        <a href="{{ path('app_logout') }}"><span class="mdi mdi-account icon-medium"> </span>Logout</a>
+                                    </div>
+                                {% endif %}
+                                
                         </header>
 
                         <div id="background"></div>

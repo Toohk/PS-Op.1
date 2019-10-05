@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<link href="{{ asset('css/form.css') }}" rel="stylesheet" />
+    
+<section>
+    <div class="card block-form-signup">
+        <p class="title-form">Create account</p>
+        <hr>
+        <div class="content-form">
+
+            {{ form_start(registrationForm) }}
+                <fieldset>
+                    {{ form_label(registrationForm.email) }} <span class="red">*</span> <br>
+                    {{ form_widget(registrationForm.email,{
+                        'attr':{'class':'card input-form',
+                        'placeholder': 'Enter your email address'}
+                    }) }}
+                </fieldset>
+
+                <fieldset>
+                    {{ form_label(registrationForm.username) }} <span class="red">*</span> <br>
+                    {{ form_widget(registrationForm.username,{
+                        'attr':{'class':'card input-form',
+                        'placeholder': 'Enter your username'}
+                    }) }}
+                </fieldset>
+
+                <fieldset>
+                    {{ form_label(registrationForm.password.first) }} <span class="red">*</span> <br>
+                    {{ form_widget(registrationForm.password.first,{
+                        'attr':{'class':'card input-form',
+                        'placeholder': 'Enter a password'}
+                    }) }}
+                </fieldset>
+
+                <fieldset>
+                    {{ form_label(registrationForm.password.second) }} <span class="red">*</span> <br>
+                    {{ form_widget(registrationForm.password.second,{
+                        'attr':{'class':'card input-form',
+                        'placeholder': 'Enter password again'}
+                    }) }}
+                </fieldset>
+
+                <fieldset>
+                    {{ form_widget(registrationForm.agreeTerms) }}
+                    {{ form_label(registrationForm.agreeTerms) }} <span class="red">*</span>
+                </fieldset>
+
+                <div class="flex end">
+                        <button class="btn-signup" type="submit">Signup !</button>
+                </div>
+
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+</section>
+
+    {
+{% endblock %}
