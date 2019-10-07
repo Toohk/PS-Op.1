@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link href="{{ asset('css/account.css') }}" rel="stylesheet" />
+
+    <section>
+
+       
+
+        
+        <div class="block">
+            <p class="title-form"><span class="mdi orange mdi-file-document-box-search icon-medium"> </span>In review</p>
+            <div class="list-article">
+                {% for page in pages %}
+                    <a class="black" href="{{ path('review', {'id': page.id}) }}">
+                        <div class="li-page"> 
+                            <div class="li-title-page">{{ page.title }}</div>
+                            <div class="">{{ page.user.email }}</div>
+                            <div class="">Comments({{ page.comments | length }})</div>
+                            <div class="">{{ page.validations | length }}</div>
+                            <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
+                        </div>
+                    </a>
+
+                {% endfor %}
+            </div>
+        </div>
+        
+        
+    
+    </section>
+    
+{% endblock %}

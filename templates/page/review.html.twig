@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link href="{{ asset('css/account.css') }}" rel="stylesheet" />
+
+    <section>
+
+       
+        <article class="page-block card">
+                
+                <h2>{{ page.title }}</h2>
+                {{ page.content | raw }}
+                {{ page.user.username }}
+                
+        </article>
+
+        <div>
+
+        {% if app.user.id != page.user.id %}
+                <a class="black" href="{{ path('approve', {'id': page.id}) }}">
+                <button class="btn-create">approve</button>
+                </a>  
+        {% endif %}
+
+        {{ form_start(CommentForm) }}
+                <button type="submit">send</button>
+        {{ form_end(CommentForm) }}
+
+        {% for comment in comments %}
+                <div class="comment-block card">
+                                <div>{{ comment.user.username }} {{ comment.date|date("m/d/Y") }} </div>
+                        <div> {{ comment.content }} </div>
+                </div>
+        {% endfor %}
+</div>
+    </section>
+    
+{% endblock %}

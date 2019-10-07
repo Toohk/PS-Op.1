@@ -14,31 +14,95 @@
         <div class="block">
             <p class="title-form"> <span class="mdi grey mdi-file-document-edit icon-medium"> </span>In progress</p>
             <div class="list-article">
-                <div class="li-page"> 
-                    <div class="li-title-page">Title page</div>
-                    <div class="li-date-page">23/12/2019</div>
-                    <div>
-                        <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
-                        <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
-                    </div>
-                </div>
-                <div class="li-page"> 
-                        <div class="li-title-page">Title page 2</div>
-                        <div class="li-date-page">20/10/2019</div>
+                {% for page in pages %}
+                    {% if page.status == 'INPROGRESS' %}
+                    <div class="li-page"> 
+                        <div class="li-title-page">{{ page.title }}</div>
+                        
+                        <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
                         <div>
-                            <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
-                            <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
+                                <a href="{{ path('status', {'id': page.id, 'status': 'INREVIEW'}) }}">
+                                        <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>In review</button>
+                                    </a>
+                            <a href="{{ path('edit', {'id': page.id }) }}">
+                                <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
+                            </a>
+                                <a href="{{ path('remove', {'id': page.id }) }}">
+                                    <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
+                            </a>
+                            
                         </div>
                     </div>
+                    {% endif %}
+                {% endfor %}
+                
             </div>
         </div>
         <div class="block">
             <p class="title-form"><span class="mdi orange mdi-file-document-box-search icon-medium"> </span>In review</p>
-            <div class="list-article"></div>
+            <div class="list-article">
+                {% for page in pages %}
+                    {% if page.status == 'INREVIEW' and page.validations|length < 3 %}
+                        <div class="li-page"> 
+                            <div class="li-title-page">{{ page.title }}</div>
+                            <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
+                            <div class="li-title-page">{{ page.validations | length }}</div>
+                            <div>
+                               
+                                <a href="{{ path('edit', {'id': page.id }) }}">
+                                    <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
+                                </a>
+                                    <a href="{{ path('remove', {'id': page.id }) }}">
+                                        <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if page.status == 'INREVIEW' and page.validations|length > 3 %}
+                        <div class="li-page border-green"> 
+                            <div class="li-title-page">{{ page.title }}</div>
+                            <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
+                            <div class="li-title-page">{{ page.validations | length }}</div>
+                            <div>
+                                    <a href="{{ path('status', {'id': page.id, 'status': 'PUBLIC'}) }}">
+                                            <button class="btn-list"><span class="mdi green mdi-check-outline icon-medium"> </span>Public</button>
+                                        </a>
+                                <a href="{{ path('edit', {'id': page.id }) }}">
+                                    <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
+                                </a>
+                                    <a href="{{ path('remove', {'id': page.id }) }}">
+                                        <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
         <div class="block">
             <p class="title-form"><span class="mdi blue mdi-book-open-page-variant icon-medium"> </span>Pages</p>
-            <div class="list-article"></div>
+            <div class="list-article">
+                {% for page in pages %}
+                    {% if page.status == 'PUBLIC' %}
+                        <div class="li-page"> 
+                            <div class="li-title-page">{{ page.title }}</div>
+                            <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
+                            <div>
+                
+                                <a href="{{ path('edit', {'id': page.id }) }}">
+                                    <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
+                                </a>
+                                    <a href="{{ path('remove', {'id': page.id }) }}">
+                                        <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
         
     

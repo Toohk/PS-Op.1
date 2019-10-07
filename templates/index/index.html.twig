@@ -10,29 +10,17 @@
 
             <div class="flex column fifty">
 
-                <article class="last-page card">
-                    <div class="flex space-between"><p><span class="mdi mdi-clock-alert "> </span>Last publication</p> <a href="">voir la page</a></div>
-                    <hr>
-                    <h2>Titre de la page</h2>
-                    <div class="flex block-paragraph-img">
-                        <p class="first-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore enim rerum omnis, officiis dolorem aperiam eum necessitatibus molestiae architecto illum doloremque placeat eos. Eius quos necessitatibus deserunt odit, est fugit eum debitis minima magnam vel dolores quod, eveniet a doloremque enim eligendi officiis nobis aut nesciunt omnis suscipit provident. Illo?</p>
-                        <div class="img-paragraph"><img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18284-1600x1200.jpg" alt=""></div>
-                    </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum pariatur iure nisi deleniti dolore. Cum, nam libero iusto saepe, praesentium porro optio eum impedit voluptatibus pariatur possimus dignissimos voluptatum magni, quia distinctio. Omnis labore quos sunt laudantium sed fugit placeat! Accusamus ipsum, velit fugit earum est illum rem laudantium eligendi nemo, nisi aperiam sapiente reiciendis nesciunt commodi at. Atque ut dolores quo! Necessitatibus minima iste fugit beatae illo fugiat soluta.</p>
-                </article>
+                
 
-                <article class="last-page card">
-                    <div class="flex space-between"><p>Dernier article publié</p> <a href="">voir la page</a></div>
-                    <hr>
-                    <h2>Titre de la page</h2>
-                    <div class="flex">
-                        <p class="first-paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore enim rerum omnis, officiis dolorem aperiam eum necessitatibus molestiae architecto illum doloremque placeat eos. Eius quos necessitatibus deserunt odit, est fugit eum debitis minima magnam vel dolores quod, eveniet a doloremque enim eligendi officiis nobis aut nesciunt omnis suscipit provident. Illo?</p>
-                        <div class="img-paragraph">
-                            <img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18284-1600x1200.jpg" alt="">
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum pariatur iure nisi deleniti dolore. Cum, nam libero iusto saepe, praesentium porro optio eum impedit voluptatibus pariatur possimus dignissimos voluptatum magni, quia distinctio. Omnis labore quos sunt laudantium sed fugit placeat! Accusamus ipsum, velit fugit earum est illum rem laudantium eligendi nemo, nisi aperiam sapiente reiciendis nesciunt commodi at. Atque ut dolores quo! Necessitatibus minima iste fugit beatae illo fugiat soluta.</p>
-                </article>
+                {% for page in pages %}
+                    <article class="last-page card">
+                        
+                        <h2>{{ page.title }}</h2>
+                        {{ page.content | raw }}
+                        {{ page.user.username }}
+                        
+                    </article>
+                {% endfor %}
 
             </div>
 

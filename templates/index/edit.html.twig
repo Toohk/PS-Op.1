@@ -6,21 +6,36 @@
 
     <section>
 
-        <div class="block-btn-user-menu">
-            
-            <button class="btn-create"><span class="mdi mdi-eye icon-medium"> </span>Review pages</button>
-            <button class="btn-create"><span class="mdi mdi-folder-account icon-medium"> </span>My pages</button>
-            <button class="btn-create"><span class="mdi mdi-file icon-medium"> </span>Create new page</button>
-        </div>
+        
 
         <div class="block">
-            <p class="title-form">EDIT</p>
+            <p class="title-form">Create a new page</p>
             <hr>
+            
+            {{ form_start(PageForm) }}
+                {{ form_label(PageForm.title) }} <br>
+                {{ form_widget(PageForm.title,{
+                    'attr':{'class':'card input-form',
+                    'placeholder': 'Page title'}
+                }) }}
+
+                {{ form_label(PageForm.content) }} <br>
+                {{ form_widget(PageForm.content,{
+                    'attr':{'class':'card input-form',
+                    'placeholder': 'Enter your email address'}
+                }) }}
+
             <div class="flex end">
-                <button class="btn-signup" type="submit">Save</button>
+                    <button class="btn-signup" type="submit">Create page</button>
             </div>
+            {{ form_end(PageForm) }}
+                
+        
+        
         </div>
         
+        
+    
     </section>
     
 {% endblock %}

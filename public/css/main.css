@@ -27,7 +27,7 @@ nav{
     box-shadow: 5px 0px 1px rgb(204, 206, 207);
 }
 .nav-content{
-    position: fixed;
+   
 }
 main{
     width: 100%;
@@ -100,6 +100,10 @@ section{
     margin: 10px 0px;
     padding: 20px;
 }
+.last-page img{
+    max-width: 100%;
+    height: auto;
+}
 .daily-picture-block{
     height: fit-content;
     width: auto;
@@ -138,6 +142,9 @@ section{
     margin-top: 20px;
  
     font-size: 25px;
+}
+.black{
+    color: black;
 }
 ul{
     list-style: none;
@@ -240,10 +247,18 @@ fieldset{
     margin: 20px 20px;
     padding: 10px;
 }
-.list-article{
-    
+.page-block{
+    margin: 20px;
+    padding: 20px;
 }
-
+.comment-block{
+    background-color: white;
+    margin: 30px;
+    width: 100%;
+}
+.green{
+    color: rgb(57, 195, 57);
+}
 
 
 

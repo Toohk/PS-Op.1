@@ -11,16 +11,16 @@
         <div class="block">
             <p class="title-form">Create a new page</p>
             <hr>
-            <fieldset>
-                <label for="name-page">Page's name</label> <br>
-                <input class="input-form card" name="name-page" placeholder="Name">
-            </input>
-            </fieldset>
+            
+            {{ form_start(PageForm) }}
+
+            <div class="flex end">
+                    <button class="btn-signup" type="submit">Create page</button>
+            </div>
+            {{ form_end(PageForm) }}
                 
         
-        <div class="flex end">
-            <button class="btn-signup" type="submit">Create page</button>
-    </div>
+        
         </div>
         
         

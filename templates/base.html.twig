@@ -31,9 +31,9 @@
                                 <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Contact</a></li>
                                 {% if app.user %}
                                 <hr>
-                                <li><a href="{{ path('user') }}"><span class="mdi mdi-file-question icon-medium"> </span>My pages</a></li>
-                                <li><a href=""><span class="mdi mdi-clock-alert icon-medium"> </span>Account</a></li>
-                                <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Review page</a></li>
+                                <li><a href="{{ path('user') }}"><span class="mdi mdi-folder icon-medium"> </span>My pages</a></li>
+                                <li><a href=""><span class="mdi mdi-account icon-medium"> </span>Account</a></li>
+                                <li><a href="{{ path('list_review') }}"><span class="mdi mdi-mail icon-medium"> </span>Review page</a></li>
                                 {% endif %}
                             </ul>
                             
@@ -44,26 +44,26 @@
                     <main>
                     
                         <header>
-                                <span id="btn-menu" class="mdi mdi-menu icon-medium btn-menu"> </span>
-                                <div class="header-title ">
-                                    <a href="" class="flex">
-                                        <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="">
-                                        <p>P.S Op.1</p> 
-                                    </a>
-                                </div>
+                            <span id="btn-menu" class="mdi mdi-menu icon-medium btn-menu"> </span>
+                            <div class="header-title ">
+                                <a href="" class="flex">
+                                    <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="">
+                                    <p>P.S Op.1</p> 
+                                </a>
+                            </div>
 
-                                {% if not app.user %}
-                                    <div>
-                                        <a href="{{ path('app_register') }}"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
-                                        <a href="{{ path('app_login') }}"><span class="mdi mdi-account icon-medium"> </span>Login</a>
-                                    </div>
-                                {% endif %}
-                                {% if app.user %}
-                                    <div>
-                                        
-                                        <a href="{{ path('app_logout') }}"><span class="mdi mdi-account icon-medium"> </span>Logout</a>
-                                    </div>
-                                {% endif %}
+                            {% if not app.user %}
+                                <div>
+                                    <a href="{{ path('app_register') }}"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
+                                    <a href="{{ path('app_login') }}"><span class="mdi mdi-account icon-medium"> </span>Login</a>
+                                </div>
+                            {% endif %}
+                            {% if app.user %}
+                                <div>
+                                    
+                                    <a href="{{ path('app_logout') }}"><span class="mdi mdi-account icon-medium"> </span>Logout</a>
+                                </div>
+                            {% endif %}
                                 
                         </header>
 
