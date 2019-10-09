@@ -44,10 +44,7 @@ class Page
      */
     private $date;
 
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $tag = [];
+   
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Validation", mappedBy="page", orphanRemoval=true)
@@ -59,10 +56,16 @@ class Page
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="pages")
+     */
+    private $tag;
+
     public function __construct()
     {
         $this->validations = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->tag = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -130,17 +133,7 @@ class Page
         return $this;
     }
 
-    public function getTag(): ?array
-    {
-        return $this->tag;
-    }
-
-    public function setTag(?array $tag): self
-    {
-        $this->tag = $tag;
-
-        return $this;
-    }
+   
 
     /**
      * @return Collection|Validation[]
@@ -199,6 +192,32 @@ class Page
             if ($comment->getPage() === $this) {
                 $comment->setPage(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTag(): Collection
+    {
+        return $this->tag;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tag->contains($tag)) {
+            $this->tag[] = $tag;
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tag->contains($tag)) {
+            $this->tag->removeElement($tag);
         }
 
         return $this;

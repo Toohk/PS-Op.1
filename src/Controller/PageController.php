@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\Comment;
 use App\Entity\Validation;
 use App\Entity\User;
+use App\Entity\Tag;
 use App\Entity\Page;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Form\PageType;
+use App\Form\TagType;
 use App\Form\CommentType;
 
 class PageController extends AbstractController
@@ -21,8 +23,12 @@ class PageController extends AbstractController
     public function create(Request $request): Response
     {
         $user = $this->getUser();
+
+        $repo = $this->getDoctrine()->getRepository( Tag::class );
+        $tags = $repo->findAll();
         
         $page = new Page();
+
         $form = $this->createForm(PageType::class, $page);
         $form->handleRequest($request);
 
@@ -41,6 +47,7 @@ class PageController extends AbstractController
 
         return $this->render('index/create.html.twig', [
             'PageForm' => $form->createView(),
+            'tags'=> $tags
         ]);
     }
 

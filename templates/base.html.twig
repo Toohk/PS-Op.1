@@ -24,16 +24,16 @@
                             <hr>
                             
                             <ul> 
-                                <li><a href=""><span class="mdi mdi-spin mdi-orbit icon-medium"> </span>Accueil</a></li>
-                                <li><a href=""><span class="mdi mdi-filter icon-medium"> </span>Thématiques</a></li>
-                                <li><a href=""><span class="mdi mdi-file-question icon-medium"> </span>Page aléatoire</a></li>
-                                <li><a href=""><span class="mdi mdi-clock-alert icon-medium"> </span>Articles récents</a></li>
-                                <li><a href=""><span class="mdi mdi-mail icon-medium"> </span>Contact</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-spin mdi-orbit icon-medium"> </span>Accueil</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-filter icon-medium"> </span>Thématiques</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-file-question icon-medium"> </span>Page aléatoire</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-clock-alert icon-medium"> </span>Articles récents</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-mail icon-medium"> </span>Contact</a></li>
                                 {% if app.user %}
                                 <hr>
-                                <li><a href="{{ path('user') }}"><span class="mdi mdi-folder icon-medium"> </span>My pages</a></li>
-                                <li><a href=""><span class="mdi mdi-account icon-medium"> </span>Account</a></li>
-                                <li><a href="{{ path('list_review') }}"><span class="mdi mdi-mail icon-medium"> </span>Review page</a></li>
+                                <li><a href="{{ path('user') }}"><span class="grey-dark mdi mdi-folder icon-medium"> </span>My pages</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-account icon-medium"> </span>Account</a></li>
+                                <li><a href="{{ path('list_review') }}"><span class="grey-dark mdi mdi-mail icon-medium"> </span>Review page</a></li>
                                 {% endif %}
                             </ul>
                             

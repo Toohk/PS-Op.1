@@ -4,6 +4,8 @@
 <link href="{{ asset('css/account.css') }}" rel="stylesheet" />
 <link href="{{ asset('css/form.css') }}" rel="stylesheet" />
 
+
+
     <section>
 
         
@@ -12,7 +14,30 @@
             <p class="title-form">Create a new page</p>
             <hr>
             
+
+            <select multiple name="" id="">
+                {% for tag in tags %}
+                        <option value="{{ tag.id }}">{{ tag.name }}</option>
+                {% endfor %}
+            </select>
+        
+            <div class="">
+                <select style="width: 100%" class="" id="id_label_single" placeholder="Adhérent" method="post" name="select" required>
+                    <option value="" disabled selected>Selectionner un adhérent</option>
+                    {% for tag in tags %}
+                        <option value="{{ tag.id }}">{{ tag.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+           
+                
+           
+            
             {{ form_start(PageForm) }}
+            {{form_widget(PageForm.title)}}
+            {{form_widget(PageForm.content)}}
+            
 
             <div class="flex end">
                     <button class="btn-signup" type="submit">Create page</button>
@@ -26,5 +51,10 @@
         
     
     </section>
+    
+{% endblock %}
+{% block javascript%}
+
+
     
 {% endblock %}
