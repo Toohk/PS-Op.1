@@ -12,10 +12,7 @@ body{
     left: 0px;
     width: 100%;
     height: 650px;
-    background: url("../img/Moon-Vector.jpg");
-    background-position: right bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(to right bottom, #051937, #35234c, #642956, #903153, #b14545);
     z-index: -1;
 }
 button { cursor: pointer; }
@@ -24,11 +21,11 @@ nav{
     width: 280px;
     min-height: 100vh;
     background-color: rgb(255, 255, 255);
-    box-shadow: 5px 0px 1px rgb(204, 206, 207);
 }
 .nav-content{
    
 }
+
 main{
     width: 100%;
     min-height: 100vh;
@@ -56,7 +53,7 @@ input[type="text"]
     padding: 0px 0px 0px 20px;
 }
 .red{
-    color: red;
+    color: rgb(255, 90, 90);
 }
 .grey-dark{
     color: rgb(70, 70, 70);
@@ -70,7 +67,7 @@ input[type="text"]
     
     margin:60px 100px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .card{
     border-radius: 10px;
@@ -84,7 +81,6 @@ input[type="text"]
     height: 200px;
     background-color: rgba(240, 248, 255, 0);
     background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));;
-    
 }
 .block-slogan h1{
     margin: 60px 0px 20px 0px;
@@ -122,7 +118,6 @@ section{
     width: 230px;
     border: none;
     border-radius: 10px 0px 0px 10px;
-    box-shadow: 5px 3px 1px rgb(113, 170, 224);
 }
 .btn-search{
     border-radius: 0px 10px 10px 0px; 
@@ -142,7 +137,6 @@ section{
     width: fit-content;
     font-weight: bold;
     margin-top: 20px;
- 
     font-size: 25px;
 }
 .black{
@@ -151,10 +145,11 @@ section{
 ul{
     list-style: none;
     margin: 50px 0px 0px 0px;
-    padding-inline-start:10px;
+    padding-inline-start:0px;
 }
 li{
-    margin-top: 20px;
+  padding: 10px 10px ;
+  border-bottom: solid 1px rgba(128, 128, 128, 0.342);
 }
 .daily-picture-title{
     margin: 0px 20px 20px 20px;
@@ -171,11 +166,9 @@ li{
 }
 .img-paragraph{
     width: 49%;
-    
 }
 .img-paragraph img{
     width: 100%;
-    
     border-radius: 5px;
 }
 .flex{
@@ -261,10 +254,17 @@ fieldset{
 .green{
     color: rgb(57, 195, 57);
 }
+li:hover{
+    
+    background-color: rgb(241, 241, 241);
+    transition-duration: 0.2s;
+}
 
 
-
-
+.subtitle-nav{
+    margin: 10px ;
+    width: 100%;
+}
 
 
 

@@ -1,0 +1,14 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/images/cancel.svg": "/build/images/cancel.606c2d55.svg",
+  "build/images/check.svg": "/build/images/check.155ba9a7.svg",
+  "build/images/drag-handler.svg": "/build/images/drag-handler.8691efb8.svg",
+  "build/images/low-vision.svg": "/build/images/low-vision.ea3e3589.svg",
+  "build/images/next-arrow.svg": "/build/images/next-arrow.50366ecb.svg",
+  "build/images/object-center.svg": "/build/images/object-center.1713d51d.svg",
+  "build/images/object-full-width.svg": "/build/images/object-full-width.d1479434.svg",
+  "build/images/object-left.svg": "/build/images/object-left.e6c64057.svg",
+  "build/images/object-right.svg": "/build/images/object-right.03409e7a.svg",
+  "build/images/previous-arrow.svg": "/build/images/previous-arrow.cce71e39.svg"
+}

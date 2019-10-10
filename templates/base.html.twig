@@ -4,7 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}P.S Op.1{% endblock %}</title>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}"/>
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('img/icon/android-icon-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/icon/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/icon/favicon-96x96.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/icon/favicon-16x16.png')}}">
         {% block stylesheets %}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
             <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css">
@@ -17,23 +22,30 @@
                     <nav id="navBar">
                         <span class="nav-content">
                         
-                            <div class="nav-logo center"><a href="{{ path('index') }}"><img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt=""></a></div>
+                            <div class="nav-logo center">
+                                <a href="{{ path('index') }}">
+                                    <img class="nav-logo" src="{{ asset('img/logo.png') }}" alt="">
+                                </a>
+                            </div>
                             
                             <div class="center title-nav">P.S Op.1 </div>
+                            <div class="center subtitle-nav">Encyclopedia of Astronomy</div>
                 
-                            <hr>
+                           
                             
                             <ul> 
+                                
                                 <li><a href=""><span class="grey-dark mdi mdi-spin mdi-orbit icon-medium"> </span>Accueil</a></li>
                                 <li><a href=""><span class="grey-dark mdi mdi-filter icon-medium"> </span>Thématiques</a></li>
                                 <li><a href=""><span class="grey-dark mdi mdi-file-question icon-medium"> </span>Page aléatoire</a></li>
                                 <li><a href=""><span class="grey-dark mdi mdi-clock-alert icon-medium"> </span>Articles récents</a></li>
                                 <li><a href=""><span class="grey-dark mdi mdi-mail icon-medium"> </span>Contact</a></li>
+                                
                                 {% if app.user %}
-                                <hr>
-                                <li><a href="{{ path('user') }}"><span class="grey-dark mdi mdi-folder icon-medium"> </span>My pages</a></li>
-                                <li><a href=""><span class="grey-dark mdi mdi-account icon-medium"> </span>Account</a></li>
-                                <li><a href="{{ path('list_review') }}"><span class="grey-dark mdi mdi-mail icon-medium"> </span>Review page</a></li>
+                                  
+                                    <li><a href="{{ path('user') }}"><span class="red mdi mdi-folder icon-medium"> </span>My pages</a></li>
+                                    <li><a href="{{ path('list_review') }}"><span class="red mdi mdi-mail icon-medium"> </span>Review page</a></li>
+                                    <li><a href=""><span class="red mdi mdi-account icon-medium"> </span>Account</a></li>
                                 {% endif %}
                             </ul>
                             
@@ -47,7 +59,7 @@
                             <span id="btn-menu" class="mdi mdi-menu icon-medium btn-menu"> </span>
                             <div class="header-title ">
                                 <a href="" class="flex">
-                                    <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="">
+                                    <img class="nav-logo" src="{{ asset('img/logo.png') }}" alt="">
                                     <p>P.S Op.1</p> 
                                 </a>
                             </div>
@@ -71,7 +83,7 @@
 
                         <div class="block-search">
                             <input class="input-search" type="text" placeholder="Search . . .">
-                            <button class="card btn-search"><span class="mdi mdi-magnify icon-medium"> </span></button>
+                            <button class="card btn-search"><span class="mdi grey-dark mdi-magnify icon-medium"> </span></button>
                         </div>
                     
                         {% block body %}{% endblock %}
@@ -91,8 +103,8 @@
                 </footer>
         
         {% block javascripts %}
-        <script src="{{ asset('js/nav-bar.js') }}"></script>
-        <script src="{{ asset('js/daily-picture.js') }}"></script>
+            <script src="{{ asset('js/nav-bar.js') }}"></script>
+            <script src="{{ asset('js/daily-picture.js') }}"></script>
         {% endblock %}
     </body>
 </html>
