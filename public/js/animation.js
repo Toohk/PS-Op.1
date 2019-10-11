@@ -7,6 +7,7 @@ inputSearch.onfocus =()=>{
     background.style.height = '100vh';
     resultBlock.style.height = '70vh';
 }
+
 inputSearch.onblur =()=>{
     background.style.height = '650px'
     resultBlock.style.height = '2px';
