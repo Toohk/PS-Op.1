@@ -19,6 +19,16 @@ class PageRepository extends ServiceEntityRepository
         parent::__construct($registry, Page::class);
     }
 
+    public function findEntitiesByString($str){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT e
+                FROM App\Entity\Page e
+                WHERE e.title LIKE :str'
+            )
+            ->setParameter('str', '%'.$str.'%')
+            ->getResult();
+    }
     // /**
     //  * @return Page[] Returns an array of Page objects
     //  */

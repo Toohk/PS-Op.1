@@ -23,7 +23,7 @@
         
             <div class="">
                 <select style="width: 100%" class="" id="id_label_single" placeholder="Adhérent" method="post" name="select" required>
-                    <option value="" disabled selected>Selectionner un adhérent</option>
+                    <option value="" disabled selected>Selectionner un tag</option>
                     {% for tag in tags %}
                         <option value="{{ tag.id }}">{{ tag.name }}</option>
                     {% endfor %}

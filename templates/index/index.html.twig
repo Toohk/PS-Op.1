@@ -8,23 +8,31 @@
     </div>
         <section>
 
-            <div class="flex column fifty">
+            <div class="flex column margin-column left-column">
 
                 
 
                 {% for page in pages %}
                     <article class="last-page card">
                         
-                        <h2>{{ page.title }}</h2>
-                        {{ page.content | raw }}
-                        {{ page.user.username }}
+                        <div class="article-header">
+                            <h2>{{ page.title }}</h2>
+                        </div>
+                        <div class="article-content">
+                            {{ page.content | raw }}
+                        </div>
+                        <div class="article-footer">
+                           <div> Author : {{ page.user.username }} </div>
+                           <div> {{ page.date| date("m/d/Y") }} </div>
+                        </div>
                         
                     </article>
                 {% endfor %}
+                
 
             </div>
 
-            <div class="flex column fifty">
+            <div class="flex column margin-column right-column">
 
                 <article class="daily-picture-block card">
                     <h3 id="daily-picture-title" class="daily-picture-title">Nom de la photo</h3>  

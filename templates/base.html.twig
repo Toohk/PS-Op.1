@@ -20,7 +20,7 @@
     <body>
             <div class="flex">
                     <nav id="navBar">
-                        <span class="nav-content">
+                        <div class="nav-content">
                         
                             <div class="nav-logo center">
                                 <a href="{{ path('index') }}">
@@ -49,7 +49,7 @@
                                 {% endif %}
                             </ul>
                             
-                        </span>
+                        </div>
                 
                     </nav>
                 
@@ -80,12 +80,16 @@
                         </header>
 
                         <div id="background"></div>
-
-                        <div class="block-search">
-                            <input class="input-search" type="text" placeholder="Search . . .">
+                        
+                        <div class="block-search" >
+                            <input class="input-search" onkeyup="showResult(this.value)" id="search-input" type="text" placeholder="Search . . .">
                             <button class="card btn-search"><span class="mdi grey-dark mdi-magnify icon-medium"> </span></button>
                         </div>
-                    
+                        <div id="block-result">
+                            <div id="livesearch">
+                                
+                            </div>
+                        </div>
                         {% block body %}{% endblock %}
                     
                         <div id="modal-background"></div>
@@ -104,6 +108,8 @@
         
         {% block javascripts %}
             <script src="{{ asset('js/nav-bar.js') }}"></script>
+            <script src="{{ asset('js/animation.js') }}"></script>
+            <script src="{{ asset('js/search.js') }}"></script>
             <script src="{{ asset('js/daily-picture.js') }}"></script>
         {% endblock %}
     </body>

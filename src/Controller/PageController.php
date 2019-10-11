@@ -7,6 +7,7 @@ use App\Entity\Validation;
 use App\Entity\User;
 use App\Entity\Tag;
 use App\Entity\Page;
+use App\Repository\PageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,6 +50,33 @@ class PageController extends AbstractController
             'PageForm' => $form->createView(),
             'tags'=> $tags
         ]);
+    }
+
+    /**
+     * @Route("/search", name="search")
+     */
+    public function search(Request $request)
+    {
+        
+        $requestString = $request->get('q');
+        $repo = $this->getDoctrine()->getRepository( Page::class );
+        $entities = $repo->findEntitiesByString($requestString);
+     
+        if(!$entities) {
+            $result['entities']['error'] = "No results";
+        } else {
+            $result['entities'] = $this->getRealEntities($entities);
+        }
+        
+        return new Response(json_encode($result));
+
+        
+    }
+    public function getRealEntities($entities){
+        foreach ($entities as $entity){
+            $realEntities[$entity->getId()] = $entity->getTitle();
+        }
+        return $realEntities;
     }
 
     /**

@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     {% endif %}
-                    {% if page.status == 'INREVIEW' and page.validations|length > 3 %}
+                    {% if page.status == 'INREVIEW' and page.validations|length > 2 %}
                         <div class="li-page border-green"> 
                             <div class="li-title-page">{{ page.title }}</div>
                             <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
