@@ -8,44 +8,42 @@
 
     <section>
 
-        
-
         <div class="block">
             <p class="title-form">Create a new page</p>
             <hr>
             
-
-            <select multiple name="" id="">
-                {% for tag in tags %}
-                        <option value="{{ tag.id }}">{{ tag.name }}</option>
-                {% endfor %}
-            </select>
-        
-            <div class="">
-                <select style="width: 100%" class="" id="id_label_single" placeholder="Adhérent" method="post" name="select" required>
-                    <option value="" disabled selected>Selectionner un tag</option>
-                    {% for tag in tags %}
-                        <option value="{{ tag.id }}">{{ tag.name }}</option>
-                    {% endfor %}
-                </select>
+            <div id="editor-title">
+                Title
+            </div>
+            <div id="editor-intro">
+                Intro
+            </div>
+            <div id="editor-content">
+                Content
             </div>
 
-           
-                
-           
-            
-            {{ form_start(PageForm) }}
-            {{form_widget(PageForm.title)}}
-            {{form_widget(PageForm.content)}}
-            
-
-            <div class="flex end">
-                    <button class="btn-signup" type="submit">Create page</button>
+            <div>
+                <br>
+                Tags : <div id="tag-list"></div>
+                <br>
             </div>
-            {{ form_end(PageForm) }}
-                
-        
-        
+
+            <div class="search-tag-block">
+                <div class="flex">
+                <input id="input-tag" onkeyup="tagResult(this.value)" type="text" placeholder="search tag..."> <button id="btn-add-tag">+</button>
+                </div>
+                <div id="search-tag-result"></div>
+            </div>
+
+            <button id="btn-save">send</button>
+
+            
+            
+            <script src="{{ asset('js/ckeditor5-build-inline/build/ckeditor.js') }}"></script>
+            <script src="{{ asset('js/editor.js') }}"></script>
+            <script src="{{ asset('js/tag.js') }}"></script>
+            <script src="{{ asset('js/page.js') }}"></script>
+            
         </div>
         
         
@@ -54,7 +52,7 @@
     
 {% endblock %}
 {% block javascript%}
-
-
+    
+   
     
 {% endblock %}

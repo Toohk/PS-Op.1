@@ -8,30 +8,53 @@
 
         
 
-        <div class="block">
-            <p class="title-form">Create a new page</p>
+        <div class="block ck-content">
+            <p class="title-form">Edit page</p>
             <hr>
             
-            {{ form_start(PageForm) }}
-                {{ form_label(PageForm.title) }} <br>
-                {{ form_widget(PageForm.title,{
-                    'attr':{'class':'card input-form',
-                    'placeholder': 'Page title'}
-                }) }}
-
-                {{ form_label(PageForm.content) }} <br>
-                {{ form_widget(PageForm.content,{
-                    'attr':{'class':'card input-form',
-                    'placeholder': 'Enter your email address'}
-                }) }}
-
-            <div class="flex end">
-                    <button class="btn-signup" type="submit">Create page</button>
+            <div id="editor-title">
+               {{page.title | raw}}
             </div>
-            {{ form_end(PageForm) }}
-                
-        
-        
+            <div id="editor-intro">
+                {{page.intro | raw}}
+            </div>
+            <div id="editor-content">
+                {{page.content | raw}}
+            </div>
+
+            <div>
+                <br>
+                Tags : <div id="tag-list">
+                   {% for tag in page.tag %}
+
+                   
+                   <div class="tag"> {{tag.name}}<input id="tag-id" type="hidden" value="{{tag.id}}"> <button onClick="removeTag('{{tag.name}}')"> X </button>  </div>
+                        
+                   {%  endfor %}
+                       
+                </div>
+                <br>
+            </div>
+
+            <div class="search-tag-block">
+                <div class="flex">
+                <input id="input-tag" onkeyup="tagResult(this.value)" type="text" placeholder="search tag..."> <button id="btn-add-tag">+</button>
+                </div>
+                <div id="search-tag-result"></div>
+            </div>
+
+            <button id="btn-save" type="submit" >send</button>
+
+            <input id="check-id" type="hidden" value="{{ page.id }}">
+            
+            <script src="{{ asset('js/ckeditor5-build-inline/build/ckeditor.js') }}"></script>
+            <script src="{{ asset('js/editor.js') }}"></script>
+            
+            <script src="{{ asset('js/edit.js') }}"></script>
+            <script src="{{ asset('js/tag.js') }}"></script>
+            
+            
+            
         </div>
         
         

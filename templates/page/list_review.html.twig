@@ -14,7 +14,7 @@
                 {% for page in pages %}
                     <a class="black" href="{{ path('review', {'id': page.id}) }}">
                         <div class="li-page"> 
-                            <div class="li-title-page">{{ page.title }}</div>
+                            <div class="li-title-page"> <span class="font-medium">{{ page.title | raw }}</span></div>
                             <div class="">{{ page.user.email }}</div>
                             <div class="">Comments({{ page.comments | length }})</div>
                             <div class="">{{ page.validations | length }}</div>

@@ -6,7 +6,7 @@
     <section>
 
         <div class="block-btn-user-menu">
-            <a href="{{ path('create') }}">
+            <a href="{{ path('new') }}">
             <button  class="btn-create"><span class="mdi mdi-file icon-medium"> </span>Create new page</button>
         </a>
         </div>
@@ -17,9 +17,10 @@
                 {% for page in pages %}
                     {% if page.status == 'INPROGRESS' %}
                     <div class="li-page"> 
-                        <div class="li-title-page">{{ page.title }}</div>
+                        <div class="li-title-page font-medium">{{ page.title | raw }}</div>
                         
                         <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
+             
                         <div>
                                 <a href="{{ path('status', {'id': page.id, 'status': 'INREVIEW'}) }}">
                                         <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>In review</button>
@@ -27,6 +28,7 @@
                             <a href="{{ path('edit', {'id': page.id }) }}">
                                 <button class="btn-list"><span class="mdi orange mdi-file-document-edit icon-medium"> </span>EDIT</button>
                             </a>
+                            {{page.url}}
                                 <a href="{{ path('remove', {'id': page.id }) }}">
                                     <button class="btn-list"><span class="mdi red mdi-delete icon-medium"></span>DELETE</button>
                             </a>
@@ -44,7 +46,7 @@
                 {% for page in pages %}
                     {% if page.status == 'INREVIEW' and page.validations|length < 3 %}
                         <div class="li-page"> 
-                            <div class="li-title-page">{{ page.title }}</div>
+                            <div class="li-title-page font-medium">{{ page.title | raw }}</div>
                             <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
                             <div class="li-title-page">{{ page.validations | length }}</div>
                             <div>
@@ -61,7 +63,7 @@
                     {% endif %}
                     {% if page.status == 'INREVIEW' and page.validations|length > 2 %}
                         <div class="li-page border-green"> 
-                            <div class="li-title-page">{{ page.title }}</div>
+                            <div class="li-title-page font-medium">{{ page.title | raw }}</div>
                             <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
                             <div class="li-title-page">{{ page.validations | length }}</div>
                             <div>
@@ -87,8 +89,8 @@
                 {% for page in pages %}
                     {% if page.status == 'PUBLIC' %}
                         <div class="li-page"> 
-                            <div class="li-title-page">{{ page.title }}</div>
-                            <div class="li-date-page"> {{ page.date |date("m/d/Y") }}</div>
+                            <div class="li-title-page font-medium">{{ page.title | raw }}</div>
+                            <div class="li-date-page"> {{ page.date |date("m/d/Y") }} </div>
                             <div>
                 
                                 <a href="{{ path('edit', {'id': page.id }) }}">

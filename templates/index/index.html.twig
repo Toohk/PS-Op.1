@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<link href="{{ asset('css/fix.css') }}" rel="stylesheet" />
 
-<div class="block-slogan card">
-        <h1>Slogan du site</h1>
+<div class="block-slogan white">
+        <h1>Encyclopedia of Astronomy</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga asperiores ducimus repellat optio odio culpa aliquid dolorum tempore quos. Ratione provident assumenda quaerat mollitia et accusamus minus obcaecati eos! Atque.</p>
     </div>
         <section>
@@ -16,13 +17,16 @@
                     <article class="last-page card">
                         
                         <div class="article-header">
-                            <h2>{{ page.title }}</h2>
+                            <h2>{{ page.title | raw }}</h2>
                         </div>
-                        <div class="article-content">
-                            {{ page.content | raw }}
+
+                        <div class="ck-content article-intro">
+                            {{page.intro | raw}}
                         </div>
+
                         <div class="article-footer">
                            <div> Author : {{ page.user.username }} </div>
+                           <a href="{{ path('page', {'url': page.url}) }}">View this page</a>
                            <div> {{ page.date| date("m/d/Y") }} </div>
                         </div>
                         
@@ -44,6 +48,6 @@
         
         </section>
     
-        
+        <script src="{{ asset('js/daily-picture.js') }}"></script>
 
 {% endblock %}

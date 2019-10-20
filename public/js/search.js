@@ -18,7 +18,7 @@ const showResult = (str) => {
         const entities = JSON.parse(this.responseText).entities;
         let results = '';
         for (let [key, value] of Object.entries(entities)) {
-            let result = `<div class="result card"><a class="black" href="/${key}"> <strong> ${value} </strong></a> </div>`
+            let result = `<div class="result font-medium card"><a class="black" href="/p/${key}"> <strong> ${value} </strong></a> </div>`
             results+= result
         }
         liveSearch.innerHTML=results;

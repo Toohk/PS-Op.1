@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title %}P.S Op.1{% endblock %}</title>
+        <meta name="description" content="Encyclopedia of astronomie" />
+        <title>{% block title %}P.S Op.1 {% endblock %}</title>
         <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}"/>
         <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('img/icon/android-icon-192x192.png')}}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/icon/favicon-32x32.png')}}">
@@ -13,11 +14,13 @@
         {% block stylesheets %}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
             <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css">
+            <link href="{{ asset('css/ckeditor.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
             
         {% endblock %}
     </head>
     <body>
+          
             <div class="flex">
                     <nav id="navBar">
                         <div class="nav-content">
@@ -28,17 +31,17 @@
                                 </a>
                             </div>
                             
-                            <div class="center title-nav">P.S Op.1 </div>
-                            <div class="center subtitle-nav">Encyclopedia of Astronomy</div>
+                            <div class="center title-nav"> P.S Op.1  </div>
+                            <div class="center subtitle-nav">Encyclopedia of Astronomy </div>
                 
                            
                             
                             <ul> 
                                 
-                                <li><a href=""><span class="grey-dark mdi mdi-spin mdi-orbit icon-medium"> </span>Accueil</a></li>
-                                <li><a href=""><span class="grey-dark mdi mdi-filter icon-medium"> </span>Thématiques</a></li>
-                                <li><a href=""><span class="grey-dark mdi mdi-file-question icon-medium"> </span>Page aléatoire</a></li>
-                                <li><a href=""><span class="grey-dark mdi mdi-clock-alert icon-medium"> </span>Articles récents</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-spin mdi-orbit icon-medium"> </span>Home</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-filter icon-medium"> </span>Thematic</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-file-question icon-medium"> </span>Random page</a></li>
+                                <li><a href=""><span class="grey-dark mdi mdi-clock-alert icon-medium"> </span>Recent pages</a></li>
                                 <li><a href=""><span class="grey-dark mdi mdi-mail icon-medium"> </span>Contact</a></li>
                                 
                                 {% if app.user %}
@@ -58,7 +61,7 @@
                         <header>
                             <span id="btn-menu" class="mdi mdi-menu icon-medium btn-menu"> </span>
                             <div class="header-title ">
-                                <a href="" class="flex">
+                                <a href="" class="flex white">
                                     <img class="nav-logo" src="{{ asset('img/logo.png') }}" alt="">
                                     <p>P.S Op.1</p> 
                                 </a>
@@ -66,24 +69,25 @@
 
                             {% if not app.user %}
                                 <div>
-                                    <a href="{{ path('app_register') }}"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
-                                    <a href="{{ path('app_login') }}"><span class="mdi mdi-account icon-medium"> </span>Login</a>
+                                    <a class="white" href="{{ path('app_register') }}"><span class="mdi mdi-account-edit icon-medium"> </span>Signup</a>
+                                    <a class="white" href="{{ path('app_login') }}"><span class="mdi mdi-account icon-medium"> </span>Login</a>
                                 </div>
                             {% endif %}
                             {% if app.user %}
                                 <div>
                                     
-                                    <a href="{{ path('app_logout') }}"><span class="mdi mdi-account icon-medium"> </span>Logout</a>
+                                    <a class="white" href="{{ path('app_logout') }}"><span class="mdi mdi-account icon-medium"> </span>Logout</a>
                                 </div>
                             {% endif %}
                                 
                         </header>
 
+                        
                         <div id="background"></div>
                         
                         <div class="block-search" >
                             <input class="input-search" onkeyup="showResult(this.value)" id="search-input" type="text" placeholder="Search . . .">
-                            <button class="card btn-search"><span class="mdi grey-dark mdi-magnify icon-medium"> </span></button>
+                            <button class=" btn-search"><span class="mdi grey-dark mdi-magnify icon-medium"> </span></button>
                         </div>
                         <div id="block-result">
                             <div id="livesearch">
@@ -101,7 +105,7 @@
                    <div class="top-footer"></div>
                    <div class="bottom-footer flex">
                         <span class="center grey"> © 2019 Copyright:  
-                            <a  href="https://toohk.fr"> toohk.fr</a>
+                            <a class="white" href="https://toohk.fr"> toohk.fr</a>
                         </span> 
                     </div>
                 </footer>
@@ -110,7 +114,7 @@
             <script src="{{ asset('js/nav-bar.js') }}"></script>
             <script src="{{ asset('js/animation.js') }}"></script>
             <script src="{{ asset('js/search.js') }}"></script>
-            <script src="{{ asset('js/daily-picture.js') }}"></script>
+            
         {% endblock %}
     </body>
 </html>

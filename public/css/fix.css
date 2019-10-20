@@ -1,0 +1,10 @@
+figcaption {
+    display: none !important;
+}
+.ck .ck-reset_all .ck-widget__resizer{
+    display: none;
+}
+
+.ck-widget__resizer{
+    display: none!important;
+}

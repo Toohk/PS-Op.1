@@ -61,6 +61,16 @@ class Page
      */
     private $tag;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $intro;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $url;
+
     public function __construct()
     {
         $this->validations = new ArrayCollection();
@@ -219,6 +229,30 @@ class Page
         if ($this->tag->contains($tag)) {
             $this->tag->removeElement($tag);
         }
+
+        return $this;
+    }
+
+    public function getIntro(): ?string
+    {
+        return $this->intro;
+    }
+
+    public function setIntro(?string $intro): self
+    {
+        $this->intro = $intro;
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(?string $url): self
+    {
+        $this->url = $url;
 
         return $this;
     }

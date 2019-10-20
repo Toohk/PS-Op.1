@@ -19,6 +19,16 @@ class TagRepository extends ServiceEntityRepository
         parent::__construct($registry, Tag::class);
     }
 
+    public function findEntitiesByString($str){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT t
+                FROM App\Entity\Tag t
+                WHERE t.name LIKE :str'
+            )
+            ->setParameter('str', '%'.$str.'%')
+            ->getResult();
+    }
     // /**
     //  * @return Tag[] Returns an array of Tag objects
     //  */

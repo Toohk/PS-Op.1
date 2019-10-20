@@ -2,13 +2,15 @@
 
 {% block body %}
 <link href="{{ asset('css/account.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/fix.css') }}" rel="stylesheet" />
 
     <section>
 
        
-        <article class="page-block card">
+        <article class="page-block card ck-content">
                 
-                <h2>{{ page.title }}</h2>
+                {{ page.title | raw}}
+                {{ page.intro | raw }}
                 {{ page.content | raw }}
                 {{ page.user.username }}
                 
